@@ -93,23 +93,28 @@ public class JsonPrimitive extends JsonElement {
   }
 
   @Override
-  public double getAsADouble() {
+  public double getAsDouble() {
     return isNumber() ? getAsNumber().doubleValue() : Double.parseDouble(getAsString());
   }
 
   @Override
-  public float getAsAFloat() {
-    return super.getAsAFloat();
+  public float getAsFloat() {
+    return isNumber() ? getAsNumber().floatValue() : Float.parseFloat(getAsString());
   }
 
   @Override
-  public int getAsAnInt() {
-    return super.getAsAnInt();
+  public long getAsLong() {
+    return isNumber() ? getAsNumber().longValue() : Long.parseLong(getAsString());
+  }
+
+  @Override
+  public int getAsInt() {
+    return isNumber() ? getAsNumber().intValue() : Integer.parseInt(getAsString());
   }
 
   @Override
   public byte getAsAByte() {
-    return super.getAsAByte();
+    return isNumber() ? getAsNumber().byteValue() : Byte.parseByte(getAsString());
   }
 
   @Override
@@ -119,11 +124,11 @@ public class JsonPrimitive extends JsonElement {
 
   @Override
   public BigInteger getAsBigInteger() {
-    return super.getAsBigInteger();
+    return value instanceof BigInteger ? (BigInteger) value : new BigInteger(getAsString());
   }
 
   @Override
   public short getAsShort() {
-    return super.getAsShort();
+    return isNumber() ? getAsNumber().shortValue() : Short.parseShort(getAsString());
   }
 }

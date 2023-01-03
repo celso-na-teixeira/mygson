@@ -64,15 +64,19 @@ public abstract class JsonElement {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
-  public double getAsADouble(){
+  public double getAsDouble(){
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
-  public float getAsAFloat(){
+  public float getAsFloat(){
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
-  public int getAsAnInt(){
+  public long getAsLong(){
+    throw new UnsupportedOperationException(getClass().getSimpleName());
+  }
+
+  public int getAsInt(){
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
