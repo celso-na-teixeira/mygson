@@ -84,6 +84,10 @@ public abstract class JsonElement {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
+  public char getAsCharacter() {
+    throw new UnsupportedOperationException(getClass().getSimpleName());
+  }
+
   public BigDecimal getAsBigDecimal(){
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }

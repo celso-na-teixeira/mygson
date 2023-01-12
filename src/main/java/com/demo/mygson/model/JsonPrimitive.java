@@ -42,25 +42,6 @@ public class JsonPrimitive extends JsonElement {
     return value instanceof String;
   }
 
-  @Override
-  public JsonObject getAsJsonObject() {
-    return super.getAsJsonObject();
-  }
-
-  @Override
-  public JsonArray getAsJsonArray() {
-    return super.getAsJsonArray();
-  }
-
-  @Override
-  public JsonPrimitive getAsJsonPrimitive() {
-    return super.getAsJsonPrimitive();
-  }
-
-  @Override
-  public JsonNull getAsJsonNull() {
-    return super.getAsJsonNull();
-  }
 
   @Override
   public boolean getAsBoolean() {
