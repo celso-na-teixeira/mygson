@@ -2,6 +2,7 @@ package com.demo.mygson.model;
 
 import com.demo.mygson.internal.LinkedTreeMap;
 import java.util.Map;
+import java.util.Set;
 
 public class JsonObject extends JsonElement {
 
@@ -43,4 +44,54 @@ public class JsonObject extends JsonElement {
     add(property, value == null ? JsonNull.INSTANCE : new JsonPrimitive(value));
   }
 
+  public Set<Map.Entry<String, JsonElement>> entrySet(){
+    return members.entrySet();
+  }
+
+  public Set<String> keySet(){
+    return members.keySet();
+  }
+
+  public int size(){
+    return members.size();
+  }
+
+  public boolean isEmpty(){
+    return members.size() == 0;
+  }
+
+  public boolean has(String memberName){
+    return members.containsKey(memberName);
+  }
+
+  public JsonElement get(String memberName){
+    return members.get(memberName);
+  }
+
+  public JsonPrimitive getAsJsonPrimitive(String memberName){
+    return (JsonPrimitive) members.get(memberName);
+  }
+
+  public JsonArray getAsJsonArray(String memberName){
+    return (JsonArray) members.get(memberName);
+  }
+
+  public JsonObject getAsJsonObject(String memberName){
+    return (JsonObject) members.get(memberName);
+  }
+
+  public Map<String, JsonElement> asMap(){
+    return members;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    return (o == this) || (o instanceof JsonObject)
+        && (((JsonObject) o).members.equals(members));
+  }
+
+  @Override
+  public int hashCode() {
+    return members.hashCode();
+  }
 }
